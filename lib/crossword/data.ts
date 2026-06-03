@@ -106,7 +106,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 10,
       direction: "down",
-      clue: "__ PUDDING (With KEFIR)",
+      clue: "___ seeds, or ___ pudding",
       answer: "CHIA",
       row: 0,
       col: 1,
