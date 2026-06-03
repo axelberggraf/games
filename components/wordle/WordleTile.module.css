@@ -1,0 +1,45 @@
+.tile {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid var(--color-tile-border);
+  background: var(--color-tile-empty-bg);
+  color: var(--color-tile-text);
+  user-select: none;
+  transition: border-color 0.05s;
+}
+
+.tbd {
+  border-color: var(--color-tile-tbd-border);
+}
+
+.correct {
+  background: var(--color-tile-correct);
+  border-color: var(--color-tile-correct);
+  color: var(--color-tile-revealed-text);
+}
+
+.present {
+  background: var(--color-tile-present);
+  border-color: var(--color-tile-present);
+  color: var(--color-tile-revealed-text);
+}
+
+.absent {
+  background: var(--color-tile-absent);
+  border-color: var(--color-tile-absent);
+  color: var(--color-tile-revealed-text);
+}
+
+.revealing {
+  animation: reveal 0.5s ease forwards;
+}
+
+.popping {
+  animation: pop 0.1s ease;
+}

@@ -1,64 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from './page.module.css';
+import GameCard from '@/components/ui/GameCard';
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default function HomePage() {
+  const date = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
+
   return (
     <div className={styles.page}>
+      <header className={styles.header}>
+        <h1 className={styles.headerTitle}>Mini Games</h1>
+      </header>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <p className={styles.subtitle}>Pick a game and start playing</p>
+        <div className={styles.grid}>
+          <GameCard
+            href="/wordle"
+            icon="🟩"
+            title="Wordle"
+            description=""
+            cardBg="rgb(227, 227, 225)"
+            subtitle="Guess the 5-letter word"
+            date={date}
+          />
+          <GameCard
+            href="/crossword"
+            icon="✏️"
+            title="Mini Crossword"
+            description=""
+            crossword
+            subtitle="A 5×5 grid of clues"
+            date={date}
+          />
+          <GameCard
+            href="/midi-crossword"
+            icon="🖊️"
+            title="Midi Crossword"
+            description=""
+            crossword
+            subtitle="A bigger 7×7 challenge"
+            date={date}
+          />
+          <GameCard
+            href="/connections"
+            icon="🔗"
+            title="Connections"
+            description=""
+            cardBg="rgb(180, 168, 255)"
+            subtitle="Find the four groups"
+            date={date}
+          />
+          <GameCard
+            href="/midi-connections"
+            icon="🔗"
+            title="Midi Connections"
+            description=""
+            cardBg="rgb(180, 168, 255)"
+            subtitle="Find the six groups"
+            date={date}
+          />
+          <GameCard
+            href="/mega-connections"
+            icon="🔗"
+            title="Mega Connections"
+            description=""
+            cardBg="rgb(180, 168, 255)"
+            subtitle="Find the eight groups"
+            date={date}
+          />
         </div>
       </main>
     </div>

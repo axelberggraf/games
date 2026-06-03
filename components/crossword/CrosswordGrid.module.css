@@ -1,0 +1,7 @@
+.grid {
+  display: grid;
+  border: 2px solid var(--color-text);
+  width: fit-content;
+  max-width: calc(100vw - 32px);
+  overflow: hidden;
+}

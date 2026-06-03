@@ -1,0 +1,16 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  gap: clamp(4px, 1.2vw, 6px);
+  width: 100%;
+}

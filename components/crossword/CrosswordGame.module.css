@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 56px;
+  border-bottom: 1px solid var(--color-header-border);
+}
+
+.headerTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+}
+
+.backLink {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--color-text);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 16px;
+  width: 100%;
+}
+
+.activeClue {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text);
+  text-align: center;
+  min-height: 1.5rem;
+  padding: 0 16px;
+}
+
+.activeClueNumber {
+  font-weight: 700;
+}
+
+.puzzleArea {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.notification {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 0.875rem;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+  pointer-events: none;
+}
+
+.clueListWrapper {
+  /* shown on desktop, hidden on mobile */
+}
+
+.mobileClueBar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding-bottom: 80px;
+  }
+
+  .activeClue {
+    display: none;
+  }
+
+  .clueListWrapper {
+    display: none;
+  }
+
+  .mobileClueBar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid var(--color-border);
+    padding: 14px 16px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    font-size: 0.9375rem;
+    z-index: 50;
+    min-height: 54px;
+  }
+}

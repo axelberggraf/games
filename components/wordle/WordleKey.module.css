@@ -1,0 +1,39 @@
+.key {
+  flex: 1;
+  min-width: 0;
+  height: clamp(46px, 7.5vh, 58px);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.625rem, 2.8vw, 0.8125rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--color-tile-border);
+  color: var(--color-tile-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s, color 0.1s;
+}
+
+.wide {
+  flex: 1.5;
+  font-size: clamp(0.5625rem, 2.4vw, 0.75rem);
+}
+
+.correct {
+  background: var(--color-tile-correct);
+  color: var(--color-tile-revealed-text);
+}
+
+.present {
+  background: var(--color-tile-present);
+  color: var(--color-tile-revealed-text);
+}
+
+.absent {
+  background: var(--color-tile-absent);
+  color: var(--color-tile-revealed-text);
+}

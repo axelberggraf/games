@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.section {
+  min-width: 160px;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.clueList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.clue {
+  font-size: 0.875rem;
+  display: flex;
+  gap: 6px;
+  padding: 3px 6px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.clue:hover {
+  background: #f0f0f0;
+}
+
+.active {
+  background: var(--color-crossword-highlight);
+  font-weight: 700;
+}
+
+.solved {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.clueNumber {
+  font-weight: 700;
+  min-width: 20px;
+}

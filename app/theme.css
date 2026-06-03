@@ -1,0 +1,53 @@
+:root {
+  /* Wordle */
+  --color-tile-correct: #538d4e;
+  --color-tile-present: #b59f3b;
+  --color-tile-absent: #3a3a3c;
+  --color-tile-empty-bg: #ffffff;
+  --color-tile-border: #d3d6da;
+  --color-tile-tbd-border: #878a8c;
+  --color-tile-text: #121212;
+  --color-tile-revealed-text: #ffffff;
+
+  /* Connections */
+  --color-connections-yellow: #f9df6d;
+  --color-connections-green: #a0c35a;
+  --color-connections-blue: #b0c4ef;
+  --color-connections-purple: #ba81c5;
+  --color-connections-orange: #f5b942;
+  --color-connections-red: #e07878;
+  --color-connections-yellow-dark: #c8a800;
+  --color-connections-green-dark: #5a8a1a;
+  --color-connections-blue-dark: #4a70c0;
+  --color-connections-purple-dark: #7a40a0;
+  --color-connections-orange-dark: #c07800;
+  --color-connections-red-dark: #a03030;
+  --color-connections-pink: #f4a7c0;
+  --color-connections-teal: #70c8c0;
+  --color-connections-pink-dark: #b05070;
+  --color-connections-teal-dark: #208870;
+
+  /* Crossword */
+  --color-crossword-active: #4a90d9;
+  --color-crossword-highlight: #a7d4f3;
+  --color-crossword-black: #121212;
+  --color-crossword-correct: #c0dfc0;
+  --color-crossword-cell-border: #d3d6da;
+  --color-crossword-number: #333333;
+
+  /* Global */
+  --color-bg: #ffffff;
+  --color-text: #121212;
+  --color-text-muted: #787c7e;
+  --color-border: #d3d6da;
+  --color-header-bg: #ffffff;
+  --color-header-border: #d3d6da;
+  --color-button-bg: #121212;
+  --color-button-text: #ffffff;
+  --color-button-hover: #3a3a3c;
+  --color-card-border: #d3d6da;
+  --color-card-hover: #f9f9f9;
+  --font-family: var(--font-geist-sans), 'Helvetica Neue', Arial, sans-serif;
+  --max-width: 500px;
+  --border-radius: 4px;
+}

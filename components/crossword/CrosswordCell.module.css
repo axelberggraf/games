@@ -1,0 +1,78 @@
+.cell {
+  position: relative;
+  border: 1px solid var(--color-crossword-cell-border);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: background 0.35s ease;
+  flex-shrink: 0;
+}
+
+.black {
+  background: var(--color-crossword-black);
+  border-color: var(--color-crossword-black);
+  cursor: default;
+}
+
+.highlighted {
+  background: var(--color-crossword-highlight);
+}
+
+.active {
+  background: var(--color-crossword-active);
+}
+
+.celebrating {
+  background: #ffb6c1;
+}
+
+.number {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-crossword-number);
+  pointer-events: none;
+}
+
+.active .number,
+.highlighted .number {
+  color: #fff;
+}
+
+.letter {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text);
+  pointer-events: none;
+}
+
+.active .letter {
+  color: #fff;
+}
+
+.heart {
+  position: absolute;
+  font-size: 0.45rem;
+  line-height: 1;
+  color: #d63a6a;
+  pointer-events: none;
+  animation: heartPop 0.25s ease forwards;
+}
+
+.heartTL { top: 2px;    left: 2px;  }
+.heartTR { top: 2px;    right: 2px; }
+.heartBL { bottom: 2px; left: 2px;  }
+.heartBR { bottom: 2px; right: 2px; }
+
+@keyframes heartPop {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
