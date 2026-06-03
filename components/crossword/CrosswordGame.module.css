@@ -114,8 +114,8 @@
     top: 0;
     left: 0;
     right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid var(--color-border);
+    background: #d4e0f8;
+    border-bottom: 1px solid #b0c4ef;
     z-index: 50;
     min-height: 52px;
     padding-top: env(safe-area-inset-top);
@@ -136,24 +136,18 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 48px;
+    width: 52px;
     align-self: stretch;
-    background: none;
+    background: #2860d8;
     border: none;
-    border-right: 1px solid var(--color-border);
     font-size: 1.25rem;
-    color: var(--color-text);
+    color: #ffffff;
     cursor: pointer;
     touch-action: manipulation;
   }
 
-  .clueNavBtn:last-child {
-    border-right: none;
-    border-left: 1px solid var(--color-border);
-  }
-
   .clueNavBtn:active {
-    background: #f0f0f0;
+    background: #1a4db0;
   }
 
   .mobileClueText {

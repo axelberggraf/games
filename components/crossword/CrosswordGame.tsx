@@ -332,9 +332,6 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             onPointerDown={e => { e.preventDefault(); navigateClue(-1); }}
           >←</button>
           <div className={styles.mobileClueText}>
-            <span className={styles.activeClueNumber}>
-              {activeClue.number}{activeClue.direction === 'across' ? 'A' : 'D'} —{' '}
-            </span>
             {activeClue.clue}
           </div>
           <button
