@@ -124,6 +124,7 @@ export default function CrosswordGame({ puzzle, title }: Props) {
     if (isPuzzleComplete(updatedGrid)) {
       setMessage('Puzzle complete!');
       setActiveCell(null);
+      inputRef.current?.blur();
       puzzle.animationTiles?.forEach((tile, i) => {
         setTimeout(() => {
           setCelebrationTiles(prev => new Set([...prev, `${tile.row}-${tile.col}`]));

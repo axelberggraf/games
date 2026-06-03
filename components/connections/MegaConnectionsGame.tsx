@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './MegaConnectionsGame.module.css';
 import type { ConnectionColor } from '@/lib/connections/types';
@@ -30,6 +30,12 @@ export default function MegaConnectionsGame({ puzzle, title }: Props) {
   const [solvedColors, setSolvedColors] = useState<ConnectionColor[]>([]);
   const [gameStatus, setGameStatus] = useState<'playing' | 'won'>('playing');
   const [message, setMessage] = useState('');
+  const latestBannerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (solvedColors.length === 0) return;
+    latestBannerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [solvedColors]);
 
   const showMessage = useCallback((msg: string, duration = 2000) => {
     setMessage(msg);
@@ -103,9 +109,11 @@ export default function MegaConnectionsGame({ puzzle, title }: Props) {
         <div className={styles.wrapper}>
           {colorOrder.filter(c => solvedColors.includes(c)).map(color => {
             const cat = puzzle.categories.find(c => c.color === color)!;
+            const isLatest = color === solvedColors[solvedColors.length - 1];
             return (
               <div
                 key={color}
+                ref={isLatest ? latestBannerRef : null}
                 className={styles.banner}
                 style={{ background: `var(--color-connections-${color})` }}
               >
