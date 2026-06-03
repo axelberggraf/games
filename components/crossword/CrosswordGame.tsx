@@ -44,6 +44,23 @@ export default function CrosswordGame({ puzzle, title }: Props) {
     ? `${activeClue.number}-${activeClue.direction}`
     : null;
 
+  const sortedClues = useMemo(() => [
+    ...puzzle.clues.filter(c => c.direction === 'across').sort((a, b) => a.number - b.number),
+    ...puzzle.clues.filter(c => c.direction === 'down').sort((a, b) => a.number - b.number),
+  ], [puzzle.clues]);
+
+  const activeClueIndex = useMemo(() => {
+    if (!activeClue) return -1;
+    return sortedClues.findIndex(c => c.number === activeClue.number && c.direction === activeClue.direction);
+  }, [activeClue, sortedClues]);
+
+  const navigateClue = useCallback((delta: 1 | -1) => {
+    if (activeClueIndex === -1) return;
+    const next = sortedClues[(activeClueIndex + delta + sortedClues.length) % sortedClues.length];
+    inputRef.current?.focus({ preventScroll: true });
+    setActiveCell({ row: next.row, col: next.col, direction: next.direction });
+  }, [activeClueIndex, sortedClues]);
+
   function getValidDirection(row: number, col: number, preferred: Direction): Direction {
     const cell = gridState[row][col];
     const hasAcross = cell.acrossClueNum !== undefined;
@@ -310,10 +327,20 @@ export default function CrosswordGame({ puzzle, title }: Props) {
 
       {activeClue && (
         <div className={styles.mobileClueBar}>
-          <span className={styles.activeClueNumber}>
-            {activeClue.number} {activeClue.direction === 'across' ? 'A' : 'D'} —{' '}
-          </span>
-          {activeClue.clue}
+          <button
+            className={styles.clueNavBtn}
+            onPointerDown={e => { e.preventDefault(); navigateClue(-1); }}
+          >←</button>
+          <div className={styles.mobileClueText}>
+            <span className={styles.activeClueNumber}>
+              {activeClue.number}{activeClue.direction === 'across' ? 'A' : 'D'} —{' '}
+            </span>
+            {activeClue.clue}
+          </div>
+          <button
+            className={styles.clueNavBtn}
+            onPointerDown={e => { e.preventDefault(); navigateClue(1); }}
+          >→</button>
         </div>
       )}
     </div>

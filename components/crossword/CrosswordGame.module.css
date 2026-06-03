@@ -89,7 +89,12 @@
 }
 
 @media (max-width: 640px) {
+  .header {
+    display: none;
+  }
+
   .main {
+    padding-top: 16px;
     padding-bottom: 80px;
   }
 
@@ -104,18 +109,62 @@
   .mobileClueBar {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 4px;
+    gap: 0;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background: #ffffff;
     border-top: 1px solid var(--color-border);
-    padding: 14px 16px;
-    padding-bottom: max(14px, env(safe-area-inset-bottom));
-    font-size: 0.9375rem;
     z-index: 50;
-    min-height: 54px;
+    min-height: 52px;
+  }
+}
+
+.clueNavBtn {
+  display: none;
+}
+
+.mobileClueText {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .clueNavBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    align-self: stretch;
+    background: none;
+    border: none;
+    border-right: 1px solid var(--color-border);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .clueNavBtn:last-child {
+    border-right: none;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .clueNavBtn:active {
+    background: #f0f0f0;
+  }
+
+  .mobileClueText {
+    display: block;
+    flex: 1;
+    font-size: 0.875rem;
+    padding: 10px 12px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }
