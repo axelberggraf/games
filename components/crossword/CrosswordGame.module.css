@@ -94,8 +94,8 @@
   }
 
   .main {
-    padding-top: 16px;
-    padding-bottom: 80px;
+    padding-top: calc(68px + env(safe-area-inset-top));
+    padding-bottom: 16px;
   }
 
   .activeClue {
@@ -161,7 +161,6 @@
     flex: 1;
     font-size: 0.875rem;
     padding: 10px 12px;
-    padding-bottom: max(10px, env(safe-area-inset-bottom));
     line-height: 1.4;
     overflow: hidden;
     display: -webkit-box;
