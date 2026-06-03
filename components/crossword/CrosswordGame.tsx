@@ -133,7 +133,6 @@ export default function CrosswordGame({ puzzle, title }: Props) {
     }
     setSolvedClues(newSolved);
     if (isPuzzleComplete(updatedGrid)) {
-      setMessage('Puzzle complete!');
       setActiveCell(null);
       inputRef.current?.blur();
       puzzle.animationTiles?.forEach((tile, i) => {
