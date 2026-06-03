@@ -84,6 +84,10 @@
   /* shown on desktop, hidden on mobile */
 }
 
+.backLinkBottom {
+  display: none;
+}
+
 .mobileClueBar {
   display: none;
 }
@@ -91,6 +95,14 @@
 @media (max-width: 640px) {
   .header {
     display: none;
+  }
+
+  .backLinkBottom {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 8px 0 24px;
   }
 
   .main {

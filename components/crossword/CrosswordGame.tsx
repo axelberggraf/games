@@ -28,6 +28,22 @@ export default function CrosswordGame({ puzzle, title }: Props) {
   const [message, setMessage] = useState('');
   const [celebrationTiles, setCelebrationTiles] = useState<Set<string>>(new Set());
   const inputRef = useRef<HTMLInputElement>(null);
+  const [clueBarTop, setClueBarTop] = useState(0);
+
+  // iOS Safari: position:fixed scrolls with content when keyboard is open.
+  // Track visualViewport.offsetTop to manually keep the bar at the visual top.
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const update = () => setClueBarTop(vv.offsetTop);
+    update();
+    vv.addEventListener('scroll', update);
+    vv.addEventListener('resize', update);
+    return () => {
+      vv.removeEventListener('scroll', update);
+      vv.removeEventListener('resize', update);
+    };
+  }, []);
 
 
   const highlightedCells = useMemo(() => {
@@ -323,10 +339,11 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             />
           </div>
         </div>
+        <Link href="/" className={styles.backLinkBottom}>← Games</Link>
       </main>
 
       {activeClue && (
-        <div className={styles.mobileClueBar}>
+        <div className={styles.mobileClueBar} style={{ top: clueBarTop }}>
           <button
             className={styles.clueNavBtn}
             onPointerDown={e => { e.preventDefault(); navigateClue(-1); }}
