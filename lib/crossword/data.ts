@@ -34,7 +34,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 2,
       direction: "across",
-      clue: "___ as a fox.",
+      clue: "___ as a fox",
       answer: "SLY",
       row: 1,
       col: 3,
@@ -43,7 +43,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 3,
       direction: "across",
-      clue: "Top secret US org.",
+      clue: "Top secret US org",
       answer: "CIA",
       row: 2,
       col: 0,
@@ -52,7 +52,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 4,
       direction: "across",
-      clue: "When doubled, slang for cops.",
+      clue: "When doubled, slang for cops",
       answer: "PO",
       row: 2,
       col: 4,
@@ -61,7 +61,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 5,
       direction: "across",
-      clue: "Swiss peak.",
+      clue: "Swiss peak",
       answer: "ALP",
       row: 3,
       col: 1,
@@ -115,7 +115,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 11,
       direction: "down",
-      clue: "German peak.",
+      clue: "German peak",
       answer: "ALP",
       row: 0,
       col: 4,
@@ -124,7 +124,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 12,
       direction: "down",
-      clue: "Loop in.",
+      clue: "Loop in",
       answer: "CC",
       row: 1,
       col: 0,
@@ -133,7 +133,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 13,
       direction: "down",
-      clue: "Kids...",
+      clue: "Teens and tweens",
       answer: "YOUTHS",
       row: 1,
       col: 5,
@@ -142,7 +142,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 14,
       direction: "down",
-      clue: '"___ kaffe", or a male Arabic name.',
+      clue: "___ Kaffe; norwegian coffee brand, or a male Arabic name",
       answer: "ALI",
       row: 2,
       col: 2,
@@ -151,7 +151,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 15,
       direction: "down",
-      clue: '"Toll!"',
+      clue: '"Toll!" or ____ Donna',
       answer: "PRIMA",
       row: 3,
       col: 3,
@@ -160,7 +160,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 16,
       direction: "down",
-      clue: "I'm ___ (not feeling well)",
+      clue: "___matic (album by Nas)",
       answer: "ILL",
       row: 4,
       col: 0,
@@ -169,7 +169,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 17,
       direction: "down",
-      clue: "You'll never know if you don't ___.",
+      clue: "You'll never know if you don't ___",
       answer: "TRY",
       row: 5,
       col: 4,
