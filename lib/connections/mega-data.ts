@@ -1,4 +1,4 @@
-import type { ConnectionColor } from './types';
+import type { ConnectionColor } from "./types";
 
 export interface MegaCategory {
   color: ConnectionColor;
@@ -12,15 +12,15 @@ export interface MegaConnectionsPuzzle {
 }
 
 export const MEGA_PUZZLE: MegaConnectionsPuzzle = {
-  word: 'WORD',
+  word: "VANESSA",
   categories: [
-    { color: 'yellow', difficulty: 'Easy',        label: 'You got this one' },
-    { color: 'green',  difficulty: 'Medium',       label: 'Still pretty easy' },
-    { color: 'blue',   difficulty: 'Hard',         label: 'Impressive instincts' },
-    { color: 'purple', difficulty: 'Tricky',       label: 'Very sneaky' },
-    { color: 'orange', difficulty: 'Challenging',  label: 'Halfway there' },
-    { color: 'red',    difficulty: 'Expert',       label: 'Truly remarkable' },
-    { color: 'pink',   difficulty: 'Master',       label: 'Almost legendary' },
-    { color: 'teal',   difficulty: 'Genius',       label: 'Absolute perfection' },
+    { color: "yellow", difficulty: "Easy", label: "Die schönste der Welt" },
+    { color: "green", difficulty: "Medium", label: "Die tollste der Welt" },
+    { color: "blue", difficulty: "Hard", label: "Impressive instincts" },
+    { color: "purple", difficulty: "Tricky", label: "Very sneaky" },
+    { color: "orange", difficulty: "Challenging", label: "Halfway there" },
+    { color: "red", difficulty: "Expert", label: "Truly remarkable" },
+    { color: "pink", difficulty: "Master", label: "Almost legendary" },
+    { color: "teal", difficulty: "Genius", label: "Absolute perfection" },
   ],
 };
