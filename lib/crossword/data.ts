@@ -97,7 +97,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 9,
       direction: "across",
-      clue: "Second, Minute, Hour, ___.",
+      clue: "Second < Minute < Hour < ___.",
       answer: "DAY",
       row: 7,
       col: 2,
@@ -124,6 +124,15 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 12,
       direction: "down",
+      clue: "Loop in.",
+      answer: "CC",
+      row: 1,
+      col: 0,
+      length: 2,
+    },
+    {
+      number: 13,
+      direction: "down",
       clue: "Kids...",
       answer: "YOUTHS",
       row: 1,
@@ -131,7 +140,7 @@ export const PUZZLE: CrosswordPuzzle = {
       length: 6,
     },
     {
-      number: 13,
+      number: 14,
       direction: "down",
       clue: '"___ kaffe", or a male Arabic name.',
       answer: "ALI",
@@ -140,7 +149,7 @@ export const PUZZLE: CrosswordPuzzle = {
       length: 3,
     },
     {
-      number: 14,
+      number: 15,
       direction: "down",
       clue: '"Toll!"',
       answer: "PRIMA",
@@ -149,7 +158,7 @@ export const PUZZLE: CrosswordPuzzle = {
       length: 5,
     },
     {
-      number: 15,
+      number: 16,
       direction: "down",
       clue: "I'm ___ (not feeling well)",
       answer: "ILL",
@@ -158,7 +167,7 @@ export const PUZZLE: CrosswordPuzzle = {
       length: 3,
     },
     {
-      number: 16,
+      number: 17,
       direction: "down",
       clue: "You'll never know if you don't ___.",
       answer: "TRY",

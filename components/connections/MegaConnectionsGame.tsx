@@ -66,8 +66,6 @@ export default function MegaConnectionsGame({ puzzle, title }: Props) {
       if (next.length === puzzle.categories.length) {
         setGameStatus('won');
         showMessage('Brilliant!', 4000);
-      } else {
-        showMessage(`${category.difficulty}: ${category.label}`);
       }
       return next;
     });

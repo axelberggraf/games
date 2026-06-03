@@ -28,6 +28,14 @@
 
 .celebrating {
   background: #ffb6c1;
+  background: #ffb6c1;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(255, 158, 244) 100%
+  );
+
+  border-bottom: 3px solid rgb(255, 0, 221);
 }
 
 .number {
@@ -66,13 +74,34 @@
   animation: heartPop 0.25s ease forwards;
 }
 
-.heartTL { top: 2px;    left: 2px;  }
-.heartTR { top: 2px;    right: 2px; }
-.heartBL { bottom: 2px; left: 2px;  }
-.heartBR { bottom: 2px; right: 2px; }
+.heartTL {
+  top: 2px;
+  left: 2px;
+}
+.heartTR {
+  top: 2px;
+  right: 2px;
+}
+.heartBL {
+  bottom: 2px;
+  left: 2px;
+}
+.heartBR {
+  bottom: 2px;
+  right: 2px;
+}
 
 @keyframes heartPop {
-  0%   { transform: scale(0); opacity: 0; }
-  60%  { transform: scale(1.4); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

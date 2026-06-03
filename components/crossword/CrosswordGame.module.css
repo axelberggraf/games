@@ -167,6 +167,7 @@
     flex: 1;
     font-size: 0.875rem;
     padding: 10px 12px;
+    cursor: pointer;
     line-height: 1.4;
     overflow: hidden;
     display: -webkit-box;

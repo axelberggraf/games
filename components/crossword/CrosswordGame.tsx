@@ -112,6 +112,17 @@ export default function CrosswordGame({ puzzle, title }: Props) {
     setActiveCell({ row: clue.row, col: clue.col, direction: clue.direction });
   }, []);
 
+  const handleToggleDirection = useCallback(() => {
+    if (!activeCell) return;
+    const cell = gridState[activeCell.row][activeCell.col];
+    if (cell.acrossClueNum !== undefined && cell.downClueNum !== undefined) {
+      setActiveCell(prev => ({
+        ...prev!,
+        direction: prev!.direction === 'across' ? 'down' : 'across',
+      }));
+    }
+  }, [activeCell, gridState]);
+
   const checkSolvedClues = useCallback((updatedGrid: GridState) => {
     const newSolved = new Set<string>();
     for (const clue of puzzle.clues) {
@@ -349,7 +360,10 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             className={styles.clueNavBtn}
             onPointerDown={e => { e.preventDefault(); navigateClue(-1); }}
           >←</button>
-          <div className={styles.mobileClueText}>
+          <div
+            className={styles.mobileClueText}
+            onPointerDown={e => { e.preventDefault(); handleToggleDirection(); }}
+          >
             {activeClue.clue}
           </div>
           <button
