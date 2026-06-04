@@ -115,8 +115,10 @@ export default function MegaConnectionsGame({ puzzle, title }: Props) {
                 className={styles.banner}
                 style={{ background: `var(--color-connections-${color})` }}
               >
-                <span className={styles.bannerDifficulty}>{cat.difficulty}</span>
                 <span className={styles.bannerLabel}>{cat.label}</span>
+                <span className={styles.bannerWords}>
+                  {Array.from({ length: TILES_PER_GROUP }, () => puzzle.word).join(', ')}
+                </span>
               </div>
             );
           })}

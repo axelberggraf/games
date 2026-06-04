@@ -1,26 +1,26 @@
-import type { ConnectionsPuzzle } from './types';
+import type { ConnectionsPuzzle } from "./types";
 
 export const PUZZLE: ConnectionsPuzzle = {
   categories: [
     {
-      color: 'yellow',
-      label: 'Things in a playground',
-      words: ['BENCH', 'SWING', 'SLIDE', 'POND'],
+      color: "green",
+      label: "Foods one of us likes better than the other",
+      words: ["GNOCCHI", "TUNA", "POTATO SOUP", "OVEN VEGGIES"],
     },
     {
-      color: 'green',
-      label: 'Breakfast foods',
-      words: ['WAFFLE', 'BAGEL', 'CREPE', 'OMELET'],
+      color: "yellow",
+      label: "Billie E. Songs",
+      words: ["LUNCH", "I LOVE YOU", "BLUE", "GOODBYE"],
     },
     {
-      color: 'blue',
-      label: 'Types of dance',
-      words: ['WALTZ', 'TANGO', 'SALSA', 'POLKA'],
+      color: "blue",
+      label: "Associated with our first date",
+      words: ["FOX", "STRIPED SHIRT", "BASIL", "BLOOD ORANGE"],
     },
     {
-      color: 'purple',
-      label: '"___ up"',
-      words: ['WAKE', 'SHOW', 'STAND', 'MAKE'],
+      color: "purple",
+      label: '"___SKI"',
+      words: ["BRAH", "BABE", "LOVE", "POL"],
     },
   ],
 };

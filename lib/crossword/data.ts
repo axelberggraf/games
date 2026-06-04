@@ -142,7 +142,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 14,
       direction: "down",
-      clue: "___ Kaffe; norwegian coffee brand, or a male Arabic name",
+      clue: "___ Kaffe; norwegian coffee brand, or a popular Arabic name",
       answer: "ALI",
       row: 2,
       col: 2,
@@ -151,7 +151,7 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 15,
       direction: "down",
-      clue: '"Toll!" or ____ Donna',
+      clue: '"Toll!" or ___ Donna',
       answer: "PRIMA",
       row: 3,
       col: 3,
@@ -160,7 +160,8 @@ export const PUZZLE: CrosswordPuzzle = {
     {
       number: 16,
       direction: "down",
-      clue: "___matic (album by Nas)",
+      // clue: "___matic (album by Nas)",
+      clue: "Under the weather",
       answer: "ILL",
       row: 4,
       col: 0,

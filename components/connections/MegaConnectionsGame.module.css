@@ -85,14 +85,14 @@
   animation: fadeIn 0.4s ease;
 }
 
-.bannerDifficulty {
-  font-size: 0.75rem;
+.bannerLabel {
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
-.bannerLabel {
+.bannerWords {
   font-size: 0.875rem;
   font-weight: 400;
 }
@@ -109,7 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
+  font-size: 3.5vw;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -122,6 +122,12 @@
   cursor: pointer;
   user-select: none;
   transition: background 0.1s;
+}
+
+@media (min-width: 640px) {
+  .tile {
+    font-size: 0.875rem;
+  }
 }
 
 .tile:hover {
