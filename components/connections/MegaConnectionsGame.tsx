@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useCallback, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import styles from './MegaConnectionsGame.module.css';
 import type { ConnectionColor } from '@/lib/connections/types';
 import type { MegaConnectionsPuzzle } from '@/lib/connections/mega-data';
@@ -92,9 +91,7 @@ export default function MegaConnectionsGame({ puzzle, title }: Props) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <Link href="/" className={styles.backLink}>← Games</Link>
         <h1 className={styles.headerTitle}>{title}</h1>
-        <div style={{ width: 60 }} />
       </header>
 
       {message && <div className={styles.notification}>{message}</div>}

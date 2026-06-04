@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useCallback, useReducer, useState } from 'react';
-import Link from 'next/link';
 import styles from './WordleGame.module.css';
 import WordleGrid from './WordleGrid';
 import WordleKeyboard from './WordleKeyboard';
@@ -158,9 +157,7 @@ export default function WordleGame() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <Link href="/" className={styles.backLink}>← Games</Link>
         <h1 className={styles.headerTitle}>Wordle</h1>
-        <div style={{ width: 60 }} />
       </header>
 
       {state.message && (

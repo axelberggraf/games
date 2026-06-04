@@ -72,6 +72,15 @@ export default function HomePage() {
             subtitle="Find the eight groups"
             date={date}
           />
+          <GameCard
+            href="/bandle"
+            icon="🎵"
+            title="Bandle"
+            description=""
+            cardBg="rgb(255, 220, 160)"
+            subtitle="Guess the track of the day"
+            date={date}
+          />
         </div>
       </main>
     </div>

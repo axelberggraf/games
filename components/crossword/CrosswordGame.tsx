@@ -280,9 +280,7 @@ export default function CrosswordGame({ puzzle, title }: Props) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <Link href="/" className={styles.backLink}>← Games</Link>
         <h1 className={styles.headerTitle}>{title}</h1>
-        <div style={{ width: 60 }} />
       </header>
 
       {message && <div className={styles.notification}>{message}</div>}
@@ -350,7 +348,6 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             />
           </div>
         </div>
-        <Link href="/" className={styles.backLinkBottom}>← Games</Link>
       </main>
 
       {activeClue && (
