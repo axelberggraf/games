@@ -1,13 +1,13 @@
-import styles from './page.module.css';
-import GameCard from '@/components/ui/GameCard';
+import styles from "./page.module.css";
+import GameCard from "@/components/ui/GameCard";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export default function HomePage() {
-  const date = new Date().toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
+  const date = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -36,7 +36,7 @@ export default function HomePage() {
             subtitle="A 5×5 grid of clues"
             date={date}
           />
-          <GameCard
+          {/* <GameCard
             href="/midi-crossword"
             icon="🖊️"
             title="Midi Crossword"
@@ -44,7 +44,7 @@ export default function HomePage() {
             crossword
             subtitle="A bigger 7×7 challenge"
             date={date}
-          />
+          /> */}
           <GameCard
             href="/connections"
             icon="🔗"
@@ -54,7 +54,7 @@ export default function HomePage() {
             subtitle="Find the four groups"
             date={date}
           />
-          <GameCard
+          {/* <GameCard
             href="/midi-connections"
             icon="🔗"
             title="Midi Connections"
@@ -62,7 +62,7 @@ export default function HomePage() {
             cardBg="rgb(180, 168, 255)"
             subtitle="Find the six groups"
             date={date}
-          />
+          /> */}
           <GameCard
             href="/mega-connections"
             icon="🔗"
