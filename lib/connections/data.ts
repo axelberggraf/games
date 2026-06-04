@@ -4,7 +4,7 @@ export const PUZZLE: ConnectionsPuzzle = {
   categories: [
     {
       color: "green",
-      label: "Foods one of us likes better than the other",
+      label: "Polarizing foods",
       words: ["GNOCCHI", "TUNA", "POTATO SOUP", "OVEN VEGGIES"],
     },
     {

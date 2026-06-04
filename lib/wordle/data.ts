@@ -1,1 +1,1 @@
-export const SOLUTION = 'CRANE';
+export const SOLUTION = "LOVER";
