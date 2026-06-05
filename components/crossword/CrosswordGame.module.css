@@ -84,6 +84,23 @@
   /* shown on desktop, hidden on mobile */
 }
 
+.checkBtn {
+  padding: 10px 24px;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.checkBtn:hover {
+  background: #f5f5f5;
+  border-color: #aaa;
+}
+
 .backLinkBottom {
   display: none;
 }

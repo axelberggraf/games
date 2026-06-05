@@ -7,6 +7,7 @@ interface Props {
   activeCell: ActiveCell | null;
   highlightedCells: Set<string>;
   celebrationTiles: Set<string>;
+  errorTiles: Set<string>;
   onCellClick: (row: number, col: number) => void;
 }
 
@@ -15,6 +16,7 @@ export default function CrosswordGrid({
   activeCell,
   highlightedCells,
   celebrationTiles,
+  errorTiles,
   onCellClick,
 }: Props) {
   const rows = gridState.length;
@@ -34,6 +36,7 @@ export default function CrosswordGrid({
         const isActive = !!(activeCell && activeCell.row === cell.row && activeCell.col === cell.col);
         const isHighlighted = highlightedCells.has(key);
         const isCelebrating = celebrationTiles.has(key);
+        const isError = errorTiles.has(key);
         return (
           <CrosswordCell
             key={key}
@@ -42,6 +45,7 @@ export default function CrosswordGrid({
             isActive={isActive}
             isHighlighted={isHighlighted && !isActive}
             isCelebrating={isCelebrating}
+            isError={isError}
             onClick={() => onCellClick(cell.row, cell.col)}
           />
         );

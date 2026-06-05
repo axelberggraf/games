@@ -7,10 +7,11 @@ interface Props {
   isActive: boolean;
   isHighlighted: boolean;
   isCelebrating: boolean;
+  isError: boolean;
   onClick: () => void;
 }
 
-export default function CrosswordCell({ cell, cellSize, isActive, isHighlighted, isCelebrating, onClick }: Props) {
+export default function CrosswordCell({ cell, cellSize, isActive, isHighlighted, isCelebrating, isError, onClick }: Props) {
   if (cell.isBlack) {
     return <div className={`${styles.cell} ${styles.black}`} style={{ width: cellSize, height: cellSize }} />;
   }
@@ -32,6 +33,7 @@ export default function CrosswordCell({ cell, cellSize, isActive, isHighlighted,
         <span className={styles.number}>{cell.number}</span>
       )}
       <span className={styles.letter} style={{ fontSize: letterSize }}>{cell.userInput}</span>
+      {isError && <span className={styles.errorLine} />}
       {isCelebrating && (
         <>
           <span className={`${styles.heart} ${styles.heartTL}`}>♥</span>

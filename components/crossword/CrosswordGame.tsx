@@ -27,6 +27,7 @@ export default function CrosswordGame({ puzzle, title }: Props) {
   const [solvedClues, setSolvedClues] = useState<Set<string>>(new Set());
   const [message, setMessage] = useState('');
   const [celebrationTiles, setCelebrationTiles] = useState<Set<string>>(new Set());
+  const [errorTiles, setErrorTiles] = useState<Set<string>>(new Set());
   const inputRef = useRef<HTMLInputElement>(null);
   const [clueBarTop, setClueBarTop] = useState(0);
 
@@ -143,6 +144,18 @@ export default function CrosswordGame({ puzzle, title }: Props) {
     }
   }, []);
 
+  const handleCheck = useCallback(() => {
+    const errors = new Set<string>();
+    for (const row of gridState) {
+      for (const cell of row) {
+        if (!cell.isBlack && cell.userInput && cell.userInput !== cell.letter) {
+          errors.add(`${cell.row}-${cell.col}`);
+        }
+      }
+    }
+    setErrorTiles(errors);
+  }, [gridState]);
+
   function findNextEmpty(row: number, col: number, direction: Direction): { row: number; col: number } | null {
     const ROWS = gridState.length;
     const COLS = gridState[0]?.length ?? 0;
@@ -225,6 +238,12 @@ export default function CrosswordGame({ puzzle, title }: Props) {
           checkSolvedClues(next);
           return next;
         });
+        setErrorTiles(prev => {
+          if (!prev.has(`${row}-${col}`)) return prev;
+          const next = new Set(prev);
+          next.delete(`${row}-${col}`);
+          return next;
+        });
       } else {
         const prev = getPrevCell(row, col, direction, gridState);
         if (prev) {
@@ -233,6 +252,12 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             const next = g.map(r => r.map(c => ({ ...c })));
             next[prev.row][prev.col].userInput = '';
             checkSolvedClues(next);
+            return next;
+          });
+          setErrorTiles(prevErr => {
+            if (!prevErr.has(`${prev.row}-${prev.col}`)) return prevErr;
+            const next = new Set(prevErr);
+            next.delete(`${prev.row}-${prev.col}`);
             return next;
           });
         }
@@ -249,6 +274,12 @@ export default function CrosswordGame({ puzzle, title }: Props) {
         const next = prev.map(r => r.map(c => ({ ...c })));
         next[row][col].userInput = letter;
         checkSolvedClues(next);
+        return next;
+      });
+      setErrorTiles(prev => {
+        if (!prev.has(`${row}-${col}`)) return prev;
+        const next = new Set(prev);
+        next.delete(`${row}-${col}`);
         return next;
       });
       const nextEmpty = findNextEmpty(row, col, direction);
@@ -271,6 +302,12 @@ export default function CrosswordGame({ puzzle, title }: Props) {
       const next = prev.map(r => r.map(c => ({ ...c })));
       next[row][col].userInput = letter;
       checkSolvedClues(next);
+      return next;
+    });
+    setErrorTiles(prev => {
+      if (!prev.has(`${row}-${col}`)) return prev;
+      const next = new Set(prev);
+      next.delete(`${row}-${col}`);
       return next;
     });
     const nextEmpty = findNextEmpty(row, col, direction);
@@ -337,6 +374,7 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             activeCell={activeCell}
             highlightedCells={highlightedCells}
             celebrationTiles={celebrationTiles}
+            errorTiles={errorTiles}
             onCellClick={handleCellClick}
           />
           <div className={styles.clueListWrapper}>
@@ -348,6 +386,9 @@ export default function CrosswordGame({ puzzle, title }: Props) {
             />
           </div>
         </div>
+        <button className={styles.checkBtn} onClick={handleCheck}>
+          Check puzzle
+        </button>
       </main>
 
       {activeClue && (
