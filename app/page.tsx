@@ -78,7 +78,7 @@ export default function HomePage() {
             title="Bandle"
             description=""
             cardBg="rgb(255, 220, 160)"
-            subtitle="Guess the track of the day"
+            subtitle="Medium (Par 3)"
             date={date}
           />
         </div>

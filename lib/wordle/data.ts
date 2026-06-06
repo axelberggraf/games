@@ -1,1 +1,1 @@
-export const SOLUTION = "LOVER";
+export const SOLUTION = "KOTEK";
