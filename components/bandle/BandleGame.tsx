@@ -51,7 +51,9 @@ export default function BandleGame() {
       </header>
 
       <main className={styles.main}>
-        <p className={styles.subtitle}>Guess the track of the day</p>
+        <p className={styles.subtitle}>
+          Difficulty: <strong>Medium</strong> {"(par 3)"}
+        </p>
 
         <div className={styles.tracks}>
           {TRACKS.map((track) => (

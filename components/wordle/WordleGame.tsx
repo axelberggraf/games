@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useReducer, useState } from "react";
+import { useEffect, useCallback, useReducer, useRef, useState } from "react";
 import styles from "./WordleGame.module.css";
 import WordleGrid from "./WordleGrid";
 import WordleKeyboard from "./WordleKeyboard";
@@ -37,7 +37,7 @@ const EMPTY_ROW: RowState = [
 function makeInitialState(): WordleGameState {
   return {
     solution: SOLUTION,
-    board: Array(8)
+    board: Array(6)
       .fill(null)
       .map(() => [...EMPTY_ROW] as RowState),
     currentRow: 0,
@@ -103,15 +103,15 @@ function reducer(
       board[state.currentRow] = evaluated;
       const keyboardState = updateKeyboardState(state.keyboardState, evaluated);
       const won = guess === state.solution;
-      const lost = !won && state.currentRow === 5;
+      if (!won && state.currentRow === state.board.length - 1) board.push([...EMPTY_ROW] as RowState);
       return {
         ...state,
         board,
         keyboardState,
         currentRow: state.currentRow + 1,
         currentCol: 0,
-        gameStatus: won ? "won" : lost ? "lost" : "playing",
-        message: won ? "Brilliant!" : lost ? state.solution : "",
+        gameStatus: won ? "won" : "playing",
+        message: won ? "Brilliant!" : "",
         bouncingRow: won ? state.currentRow : null,
         shakingRow: null,
       };
@@ -132,6 +132,13 @@ function reducer(
 export default function WordleGame() {
   const [state, dispatch] = useReducer(reducer, null, makeInitialState);
   const [isValidating, setIsValidating] = useState(false);
+  const gridBottomRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (state.board.length > 6) {
+      gridBottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+  }, [state.board.length]);
 
   const handleEnter = useCallback(async () => {
     if (state.gameStatus !== "playing" || isValidating) return;
@@ -206,6 +213,7 @@ export default function WordleGame() {
           shakingRow={state.shakingRow}
           bouncingRow={state.bouncingRow}
         />
+        <div ref={gridBottomRef} />
         <div className={styles.keyboard}>
           <WordleKeyboard
             keyboardState={state.keyboardState}

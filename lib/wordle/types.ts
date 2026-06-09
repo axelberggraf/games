@@ -15,7 +15,7 @@ export interface WordleGameState {
   currentRow: number;
   currentCol: number;
   keyboardState: KeyboardState;
-  gameStatus: 'playing' | 'won' | 'lost';
+  gameStatus: 'playing' | 'won';
   message: string;
   shakingRow: number | null;
   bouncingRow: number | null;

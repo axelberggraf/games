@@ -18,7 +18,7 @@ export default function ConnectionsGrid({ tiles, selected, solvedColors, colorOr
 
   return (
     <div className={styles.wrapper}>
-      {colorOrder.filter(c => solvedColors.includes(c)).map(color => {
+      {solvedColors.map(color => {
         const category = puzzle.categories.find(cat => cat.color === color)!;
         return <ConnectionsResult key={color} category={category} />;
       })}
